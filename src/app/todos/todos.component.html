@@ -1,0 +1,16 @@
+<div class="">
+  <h1 appSample>Todos</h1>
+  Enter Text: <input type="text" [(ngModel)]="newTodo"> 
+  <button (click)="addTodo()">Add</button>
+  <h3>List of Todos: (completed {{getCompleteTasks()}}/{{todos.length}})</h3>
+  <ul>
+    <li appSample *ngFor="let todo of todos;let i = index">
+      <input type="checkbox" [(ngModel)]="todo.completed">
+      &nbsp;   
+      <span class="todo-{{todo.completed}}">{{todo.text}}</span>
+      <!-- <span [ngClass]="{todo-true: todo.completed}">{{todo.text}}</span> -->
+      &nbsp; &nbsp;
+      <button class="btn btn-sm btn-danger" (click)="deleteTodo(i)">X</button>
+    </li>
+  </ul>
+</div>

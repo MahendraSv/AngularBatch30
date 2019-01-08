@@ -1,0 +1,11 @@
+<h2>Todos One (Parent-Child communication)</h2>
+Enter Text: <input type="text" [(ngModel)]="todoText">
+&nbsp;
+<button class="btn btn-success btn-sm" (click)="add()">Add</button>
+<h4>List of Todos</h4>
+
+<ul>
+  <li *ngFor="let todo of todos;let i=index">
+    <app-todo-item [data]="todo" [id]="i" (deleteTodo)="deleteTodo($event)"></app-todo-item>
+  </li>
+</ul>

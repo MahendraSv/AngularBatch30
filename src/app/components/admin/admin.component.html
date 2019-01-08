@@ -1,0 +1,21 @@
+<h2>Bikes - Admin</h2>
+<table class="table table-bordered table-hover table-inverse">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Owner Name</th>
+      <th>Email</th>
+      <th>Model</th>
+      <th class="text-right">Purchase Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let bike of bikes; let i = index">
+      <td>{{i + 1}}</td>
+      <td><a [routerLink]="['/admin/view', bike.id]">{{bike.name}}</a></td>
+      <td>{{bike.email}}</td>
+      <td>{{bike.model}}</td>
+      <td class="text-right">{{bike.purchasePrice}}</td>
+    </tr>
+  </tbody>
+</table>

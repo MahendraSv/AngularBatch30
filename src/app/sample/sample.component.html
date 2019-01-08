@@ -1,0 +1,22 @@
+<h2>ngStyle</h2>
+{{randomColor}}
+<div [style.color]="randomColor">I would be styled with different colors dynamically every time</div>
+<button bind-disabled="isDisabled" [class.styleD]="isDisabled" (click)="setColor()">Change Color</button>
+<hr />
+<h3>Style using [ngStyle] directive</h3>
+<div [ngStyle]="{
+  'color': getRandomColor(),
+  'font-size': fontSize,
+  'background-color': backgroundColor
+}">
+I would be styled with different colors dynamically
+</div>
+<hr />
+<h3>Class binding using 'className' directive</h3>
+<div [className]="'style1'">I would be classed using class name</div>
+<hr />
+<pre>
+  <div [ngClass]="['style1', 'style2']">array of classes</div>
+  <div [ngClass]="'style1 style2'">string of classes</div>
+  <div [ngClass]="{'style1': true, 'style2': true}">object of classes</div>
+</pre>
